@@ -2,7 +2,7 @@ import axios from "axios";
 import auth from "../config/firebase";
 import { io } from "socket.io-client";
 
-const baseURL = "https://chat-app-backend-0s8e.onrender.com/";
+const baseURL = "https://chat-app-backend-0s8e.onrender.com";
 
 const getUserToken = async () => {
   const user = auth.currentUser;
@@ -13,7 +13,7 @@ const getUserToken = async () => {
 export const initiateSocketConnection = async () => {
   const token = await getUserToken();
 
-  const socket = io("http://localhost:3001", {
+  const socket = io("https://chat-app-backend-0s8e.onrender.com", {
     auth: {
       token,
     },
